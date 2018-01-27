@@ -22,7 +22,7 @@
     </div>
 
 
-    <div class="row">
+    <!--<div class="row">
       <div class="col">
         <div ngbDropdown class="d-inline-block">
           <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
@@ -33,8 +33,30 @@
           </div>
         </div>
       </div>
+    </div>-->
 
-    </div>
+    <button mat-button>Click me!</button>
+
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <!--<mat-form-field>
+      <mat-select placeholder="Favorite food">
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{ food.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>-->
+
+    <mat-form-field>
+      <mat-select placeholder="Toppings" [formControl]="toppings" multiple>
+        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 </div>
 
