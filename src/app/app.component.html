@@ -1,4 +1,41 @@
 <h3>Angular app</h3>
+<div class="row">
+  <div class="col-md-3">
+    menu
+    <button type="button" class="btn btn-success">add</button>
+  </div>
+  <div class="col-md-9">
+    content
 
+    <p>
+      <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+              [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+        Toggle
+      </button>
+    </p>
+    <div id="collapseExample" [ngbCollapse]="isCollapsed">
+      <div class="card">
+        <div class="card-body">
+          You can collapse this card by clicking Toggle
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button class="dropdown-item">Action - 1</button>
+            <button class="dropdown-item">Another Action</button>
+            <button class="dropdown-item">Something else is here</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <router-outlet></router-outlet>
